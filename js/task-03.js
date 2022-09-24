@@ -27,30 +27,10 @@ const images = [
 ];
 
 const list = document.querySelector('.gallery');
-
-// const item = document.createElement('li');
-// const img = document.createElement('img');
-// list.append(item)
-// item.append(img)
-
-// img.setAttribute('src', 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-// img.setAttribute('alt', 'White and Black Long Fur Cat');
-
-const markup = images.map(image => `<li class='item'><img class='pic' src=${image.url} alt=${image.alt}></li>`).join('');
-// console.log(markup);
+const markup = images.map(image =>
+    `<li class='item'>
+        <img class='pic' src=${image.url} alt=${image.alt}>
+    </li>`)
+    .join('');
 
 list.insertAdjacentHTML('beforeend', markup);
-
-const item = document.querySelectorAll('.item');
-const pic = document.querySelectorAll('.pic');
-
-
-console.log(item);
-
-//styles
-list.style.listStyle = 'none';
-list.style.display = 'flex'
-
-
-
-item.style.backgroundColor = 'green'; //не работает
