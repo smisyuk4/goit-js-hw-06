@@ -19,9 +19,67 @@
 // і очисти значення полів форми методом reset.
 
 const refs = {
-    loginForm: document.querySelector('.login-form'),
-    btnForm: document.querySelector('.login-form button'),
+    form: document.querySelector('.login-form'),
 }
 
-console.log(refs.loginForm);
-console.log(refs.btnForm);
+// const onClickSubmit = (event) => {
+//     event.preventDefault();
+
+//     const { email, password } = event.currentTarget;
+
+//     if (email.value === '' || password.value === '') {
+//         window.alert('Увага! Всі поля повинні бути заповнені!')
+//     }
+
+//     const dataForm = {
+//         email: email.value,
+//         password: password.value,
+//     }
+
+//     event.currentTarget.reset();
+
+//     return console.log(dataForm);
+// }
+
+// refs.form.addEventListener('submit', onClickSubmit)
+
+// const onClickSubmit2 = (event) => { 
+//     event.preventDefault();
+
+//     const formData = new FormData(event.currentTarget);
+//     const formValues = {}
+
+//     formData.forEach((value, key) => {
+//         if (value === '') {
+//             window.alert('Увага! Всі поля повинні бути заповнені!')
+//         }
+
+//         formValues[key] = value;
+//     })
+
+//     event.currentTarget.reset();
+
+//     return console.log(formValues);
+// } 
+
+// refs.form.addEventListener('submit', onClickSubmit2)
+
+
+const onClickSubmit3 = (event) => { 
+    event.preventDefault();   
+
+    if (refs.form.elements.email.value !== '' && refs.form.elements.password.value !== '') {
+        const formValues = {
+            email: refs.form.elements.email.value,
+            password: refs.form.elements.password.value,
+        }
+
+        event.currentTarget.reset();
+
+        return console.log(formValues);
+    }
+
+    window.alert('Увага! Всі поля повинні бути заповнені!')
+} 
+
+refs.form.addEventListener('submit', onClickSubmit3)
