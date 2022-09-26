@@ -50,6 +50,8 @@ const createBoxes = () => {
   const markupString = markupArr.join('');
 
   refs.box.insertAdjacentHTML('afterbegin', markupString);
+
+  refs.countInput.value = '';
 }
 
 const destroyBoxes = () => {
