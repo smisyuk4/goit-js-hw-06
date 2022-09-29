@@ -1,5 +1,3 @@
-"use strict";
-
 // Напиши скрипт, який для кожного елемента масиву ingredients:
 // Створить окремий елемент < li >.
 // Обов'язково використовуй метод document.createElement().
@@ -18,9 +16,22 @@ const ingredients = [
 
 const list = document.querySelector('#ingredients')
 
+// ingredients.forEach((ingridient) => {
+//   const item = document.createElement('li');
+//   item.classList.add('item');
+//   item.textContent = ingridient;
+  // list.append(item)
+// })
+
+
+//після перевірки ДЗ переписав так щоб елементи додавались на сторінку за 1 раз
+let markupStr = '';
 ingredients.forEach((ingridient) => {
   const item = document.createElement('li');
   item.classList.add('item');
   item.textContent = ingridient;
-  list.append(item)
+
+  markupStr += item.outerHTML;  
 })
+
+list.insertAdjacentHTML('afterbegin', markupStr)

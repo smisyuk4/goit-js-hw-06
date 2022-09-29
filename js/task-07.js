@@ -1,5 +1,3 @@
-"use strict";
-
 // Напиши скрипт, який реагує на зміну значення 
 // input#font - size - control(подія input) 
 // і змінює інлайн - стиль span#text,
