@@ -25,13 +25,16 @@ const list = document.querySelector('#ingredients')
 
 
 //після перевірки ДЗ переписав так щоб елементи додавались на сторінку за 1 раз
-let markupStr = '';
+// let markupStr = '';
+let markupArr = [];
 ingredients.forEach((ingridient) => {
   const item = document.createElement('li');
   item.classList.add('item');
   item.textContent = ingridient;
 
-  markupStr += item.outerHTML;  
+  // markupStr += item.outerHTML;  
+  markupArr = [...markupArr, item]
 })
 
-list.insertAdjacentHTML('afterbegin', markupStr)
+// list.insertAdjacentHTML('afterbegin', markupStr)
+list.append(...markupArr)
